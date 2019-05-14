@@ -213,7 +213,7 @@
         var aggregateExpressions2 = [];
         var startDate = new Date('2019-05-14T15:00:00Z');
         var endDate = new Date(startDate.valueOf() + 1000*60*60*1);
-        aggregateExpressions2.push(new tsiClient.ux.AggregateExpression({predicateString: "DigitalTwins-SensorHardwareId = 'com_bosch_bcx2019.com_bosch_bcx2019_xdk-7c-ec-79-d3-39-40_illuminance'"}, {property: 'curVal', type: "Double"}, ['avg', 'min', 'max'],
+        aggregateExpressions2.push(new tsiClient.ux.AggregateExpression({predicateString: "[DigitalTwins-SensorHardwareId].String = 'com_bosch_bcx2019.com_bosch_bcx2019_xdk-7c-ec-79-d3-39-40_illuminance'"}, {property: 'curVal', type: "Double"}, ['avg', 'min', 'max'],
             { from: startDate, to: endDate, bucketSize: '2m' }, null, 'red', 'Sensor.1.Humidity'));
         //aggregateExpressions2.push(new tsiClient.ux.AggregateExpression({predicateString: "Type = 'SensorChange' AND DataType = 'Humidity' AND Id = '4eeb6076-2222-4fbd-aa83-5b117dbd63a7'"}, {property: 'Value', type: "Double"}, ['avg', 'min', 'max'],
           //  { from: startDate, to: endDate, bucketSize: '2m' }, null, 'purple', 'Sensor.2.Humidity'));
