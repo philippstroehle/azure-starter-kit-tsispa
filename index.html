@@ -211,9 +211,9 @@
         // Example 1
         // TODO: change timeframe and sensor IDs
         var aggregateExpressions2 = [];
-        var startDate = new Date('2019-05-08T00:00:00Z');
+        var startDate = new Date('2019-05-14T15:00:00Z');
         var endDate = new Date(startDate.valueOf() + 1000*60*60*1);
-        aggregateExpressions2.push(new tsiClient.ux.AggregateExpression({predicateString: "Type = 'SensorChange' AND DataType = 'Humidity' AND Id = '4eeb6076-632c-4fbd-aa83-5b117dbd63a7'"}, {property: 'Value', type: "Double"}, ['avg', 'min', 'max'],
+        aggregateExpressions2.push(new tsiClient.ux.AggregateExpression({predicateString: "[DigitalTwins-SensorHardwareId].String = 'com_bosch_bcx2019.com_bosch_bcx2019_xdk-f4-b8-5e-3e-a7-8d_magneticstrength'"}, {property: 'Value', type: "Double"}, ['avg', 'min', 'max'],
             { from: startDate, to: endDate, bucketSize: '2m' }, null, 'red', 'Sensor.1.Humidity'));
         aggregateExpressions2.push(new tsiClient.ux.AggregateExpression({predicateString: "Type = 'SensorChange' AND DataType = 'Humidity' AND Id = '4eeb6076-2222-4fbd-aa83-5b117dbd63a7'"}, {property: 'Value', type: "Double"}, ['avg', 'min', 'max'],
             { from: startDate, to: endDate, bucketSize: '2m' }, null, 'purple', 'Sensor.2.Humidity'));
